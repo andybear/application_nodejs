@@ -15,5 +15,8 @@ setuid <%= @user %>
 <% unless @group.nil? -%>
 setgid <%= @group %>
 <% end -%>
+<% unless @nofile.nil? -%>
+limit nofile <%= @nofile %> <%= @nofile %>
+<% end -%>
 chdir <%= @app_dir %>
 exec <%= @node_dir %>/bin/node <%= @entry %>

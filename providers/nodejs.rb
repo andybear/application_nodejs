@@ -83,7 +83,8 @@ action :before_restart do
       :node_dir => node['nodejs']['dir'],
       :app_dir => new_resource.release_path,
       :entry => new_resource.entry_point,
-      :environment => new_resource.environment
+      :environment => new_resource.environment,
+	  :nofile => new_resource.nofile
     )
   end
 
